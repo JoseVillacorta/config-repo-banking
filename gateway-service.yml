@@ -6,6 +6,7 @@ spring:
     name: gateway-service
   cloud:
     gateway:
+      enabled: true 
       discovery:
         locator:
           enabled: false
@@ -17,13 +18,20 @@ spring:
             - Path=/ms-customer/**
           filters:
             - StripPrefix=1 # Elimina el prefijo /ms-customer antes de enviar la peticion al ms
+        - id: test_google
+          uri: https://www.google.com
+          predicates:
+            - Path=/google/**
 
 management:
   endpoints:
     web:
       exposure:
-        include: health,info,refresh,gateway
-
+        include: "*"
+  endpoint:
+    gateway:
+      enabled: true
+      
 eureka:
   client:
     service-url:
