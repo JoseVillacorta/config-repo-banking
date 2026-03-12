@@ -18,10 +18,6 @@ spring:
             - Path=/ms-customer/**
           filters:
             - StripPrefix=1 # Elimina el prefijo /ms-customer antes de enviar la peticion al ms
-        - id: test_google
-          uri: https://www.google.com
-          predicates:
-            - Path=/google/**
 
 management:
   endpoints:
