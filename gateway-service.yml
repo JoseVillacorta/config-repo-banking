@@ -7,6 +7,19 @@ spring:
   cloud:
     gateway:
       enabled: true 
+      # --- INICIO CONFIGURACION CORS ---
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*" 
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+      # --- FIN CONFIGURACION CORS ---
       discovery:
         locator:
           enabled: false
