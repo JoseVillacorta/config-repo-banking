@@ -28,15 +28,15 @@ spring:
         - id: ms-customer
           uri: lb://ms-customer
           predicates:
-            - Path=/ms-customer/**
+            - Path=/api/v1/customers/**
           filters:
-            - StripPrefix=1 # Elimina el prefijo /ms-customer antes de enviar la peticion al ms
+            - StripPrefix=0 # Elimina el prefijo /ms-customer antes de enviar la peticion al ms
         - id: ms-account
           uri: lb://ms-account
           predicates:
-            - Path=/ms-account/**
+            - Path=/api/v1/accounts/**
           filters:
-            - StripPrefix=1 # Elimina el prefijo /ms-customer antes de enviar la peticion al ms
+            - StripPrefix=0
 
 management:
   endpoints:
