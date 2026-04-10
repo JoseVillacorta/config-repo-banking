@@ -41,6 +41,13 @@ spring:
             - Path=/api/v1/transactions/**
           filters:
             - StripPrefix=0
+        - id: ms-loan
+          uri: lb://ms-loan
+          predicates:
+            - Path=/api/v1/loans/**
+          filters:
+            - StripPrefix=0
+
 
 management:
   endpoints:
