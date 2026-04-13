@@ -47,6 +47,12 @@ spring:
             - Path=/api/v1/loans/**
           filters:
             - StripPrefix=0
+        - id: ms-logistics
+          uri: lb://ms-logistics
+          predicates:
+            - Path=/api/v1/logistics/**
+          filters:
+            - StripPrefix=0
 
 
 management:
