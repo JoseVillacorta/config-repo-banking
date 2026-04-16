@@ -53,7 +53,12 @@ spring:
             - Path=/api/v1/logistics/**
           filters:
             - StripPrefix=0
-
+        - id: ms-report
+          uri: lb://ms-report
+          predicates:
+            - Path=/api/v1/reports/**
+          filters:
+            - StripPrefix=0
 
 management:
   endpoints:
